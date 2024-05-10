@@ -5,7 +5,7 @@ export const NewCollections = () => {
   const [new_collection,setNew_Collection] = useState([]);
 
   useEffect(()=>{
-    fetch('http://localhost:4000/newcollections')
+    fetch('https://e-commerce-backend-ruby-eight.vercel.app/newcollections')
     .then((response)=>response.json()) // since fetch funtion returns a promise so we further convert it to json type
     .then((data)=>setNew_Collection(data));// .then is used to handle asynchronous function 
   },[])// empty array means that useeffect should run only once when the component is mounted

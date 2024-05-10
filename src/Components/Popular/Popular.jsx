@@ -5,7 +5,7 @@ import { Item } from '../Item/Item.jsx';
 export const Popular = () => {
   const [popularProducts, setPopularProducts] = useState([]);
   useEffect(()=>{
-    fetch('http://localhost:4000/popular_in_women')
+    fetch('https://e-commerce-backend-ruby-eight.vercel.app/popular_in_women')
     .then((response)=>response.json())
     .then((data)=>setPopularProducts(data));
   },[])

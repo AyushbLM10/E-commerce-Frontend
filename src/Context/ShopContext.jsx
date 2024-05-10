@@ -15,11 +15,11 @@ const ShopContextProvider = (props) =>{
     const [all_product, setAll_Product] = useState([]);
 
     useEffect(()=>{
-        fetch('http://localhost:4000/allproducts')
+        fetch('https://e-commerce-backend-ruby-eight.vercel.app/allproducts')
         .then((response)=>response.json())
         .then((data)=>setAll_Product(data))
         if(localStorage.getItem('auth-token')){
-            fetch('http://localhost:4000/getcart',{
+            fetch('https://e-commerce-backend-ruby-eight.vercel.app/getcart',{
                 method: "POST",
                 headers:{
                     Accept:'application/form-data',
@@ -35,7 +35,7 @@ const ShopContextProvider = (props) =>{
     const addtocart = (itemId)=>{
         setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}))
         if(localStorage.getItem('auth-token')){
-            fetch('http://localhost:4000/addToCart',{
+            fetch('https://e-commerce-backend-ruby-eight.vercel.app/addToCart',{
                 method:'POST',
                 headers:{
                     Accept:'application/form-data',
@@ -50,7 +50,7 @@ const ShopContextProvider = (props) =>{
     const removefromcart = (itemId)=>{
         setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
         if(localStorage.getItem('auth-token')){
-            fetch('http://localhost:4000/removefrom_cart',{
+            fetch('https://e-commerce-backend-ruby-eight.vercel.app/removefrom_cart',{
                 method:'POST',
                 headers:{
                     Accept:'application/form-data',

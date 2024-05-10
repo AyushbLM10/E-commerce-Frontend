@@ -14,7 +14,7 @@ export const LoginSignup = () => {
   const login = async ()=>{
     console.log(formData);
     let responseData;
-    await fetch('http://localhost:4000/login',{
+    await fetch('https://e-commerce-backend-ruby-eight.vercel.app/login',{
       method:'POST',
       headers:{
         Accept:'application/form-data',
@@ -34,7 +34,7 @@ export const LoginSignup = () => {
   const signUp = async ()=>{
     //console.log(formData);
     let responseData;
-    await fetch('http://localhost:4000/signup',{
+    await fetch('https://e-commerce-backend-ruby-eight.vercel.app/signup',{
       method:'POST',
       headers:{
         Accept:'application/form-data',

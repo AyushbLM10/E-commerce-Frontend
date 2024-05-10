@@ -4,7 +4,7 @@ import { Item } from '../Item/Item'
 export const Relatedproducts = () => {
   const [relatedProducts, setRelatedProducts] = useState([]);
   useEffect(()=>{
-    fetch('http://localhost:4000/related_products')
+    fetch('https://e-commerce-backend-ruby-eight.vercel.app/related_products')
     .then((response)=>response.json())
     .then((data)=>setRelatedProducts(data))
   },[]);
